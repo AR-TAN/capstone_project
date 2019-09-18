@@ -1,0 +1,14 @@
+{% extends 'adopt/base.html' %}
+{% block content %}
+    <div class="post">
+        {% if adopt.created %}
+            <div class="date">
+                {{ adopt.created }}
+            </div>
+        {% endif %}
+        <a href="{% url 'adopt_edit' pk=adopt.pk %}">Edit</a>
+        <h2>{{ adopt.name }}</h2>
+        <p>{{ adopt.description|linebreaksbr }}</p>
+        <p>{{ adopt.breed}}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% load staticfiles %}
+{% block content %}
+<img src="{% static 'adopt.jpg' %}" height="100" />
+<h1>Want to Adopt? Adopt Now! Visit us at Pet Care for more details. =)</h1>
+
+<h1> Pets available for adoption:</h1>
+{% for adopt in adopt %}
+    <li><img src="{{ adopt.image.url }}" height="300"></li>
+    <li>{{ adopt.name }} - {{adopt.years_old}}</li>
+    <li>{{ adopt.breed }} </li>
+    <li>{{adopt.description}}</li>
+</br>
+{% endfor %}
+
+{% endblock %}

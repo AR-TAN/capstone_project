@@ -1,0 +1,30 @@
+{% extends 'adopt/base.html' %}
+{% block content %}
+
+<div class="col-md-4">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+    <h1> Sign up! </h1>
+
+    <form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+        Username:
+        <br/>
+        <input type="text" name="username" />
+        <br/>
+        Password:
+        <br/>
+        <input type="password" name="password1" />
+        <br/>
+        Confirm Password:
+        <br/>
+        <input type="password" name="password2" />
+        <br/>
+        <br/>
+        <input class="btn btn-primary" type="submit" value="Sign Up" />
+</div>
+
+{% endblock %}
